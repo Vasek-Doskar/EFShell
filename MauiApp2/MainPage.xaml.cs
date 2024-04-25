@@ -10,7 +10,7 @@ namespace MauiApp2
         {
             _context = context;
             InitializeComponent();
-            listv.ItemsSource = _context.Zvirata.ToList();
+            listv.ItemsSource = _context.Psi.ToList();
         }
 
     }
