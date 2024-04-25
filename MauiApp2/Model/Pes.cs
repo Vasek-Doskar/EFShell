@@ -10,7 +10,6 @@ namespace MauiApp2.Model
     {
         public Pes()
         {
-
         }
         public Pes(string jmeno, int vaha, int Id) : this()
         {
@@ -23,6 +22,11 @@ namespace MauiApp2.Model
         public string Jmeno {  get; set; }
         public int Vaha { get; set; }
 
+
+        public override string ToString()
+        {
+            return $"ID:{Id} \"{Jmeno}\", {Vaha}kg";
+        }
 
         public string VydejZvuk()
         {
