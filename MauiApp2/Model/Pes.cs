@@ -6,13 +6,19 @@ using System.Threading.Tasks;
 
 namespace MauiApp2.Model
 {
-    public class Pes : Zvire
+    public class Pes 
     {
-        public Pes(string jmeno, int vaha) : base(jmeno, vaha)
+        public Pes(string jmeno, int vaha)
         {
+            Jmeno = jmeno;
+            Vaha = vaha;
         }
 
-        public override string VydejZvuk()
+        public string Jmeno {  get; set; }
+        public int Vaha { get; set; }
+
+
+        public string VydejZvuk()
         {
             return "haf.... haf...";
         }

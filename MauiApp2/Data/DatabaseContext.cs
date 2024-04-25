@@ -8,13 +8,22 @@ namespace MauiApp2.Data
         public DatabaseContext() => Database.EnsureCreated();
 
         /// <summary>
-        /// Tabulka se zvířátky :)
+        /// Tabulka se psi :)
         /// </summary>
-        public DbSet<Zvire> Zvirata { get; set; }
+        public DbSet<Pes> Psi { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlite("Data Source = Database.db");
         }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Pes>().HasData(
+                new Pes("Caesar", 13),
+                new Pes("Bertík",30)
+                );
+        }
+
     }
 }

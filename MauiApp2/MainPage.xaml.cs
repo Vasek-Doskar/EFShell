@@ -1,25 +1,18 @@
-﻿namespace MauiApp2
+﻿using MauiApp2.Data;
+using Microsoft.EntityFrameworkCore.Storage;
+
+namespace MauiApp2
 {
     public partial class MainPage : ContentPage
     {
-        int count = 0;
-
-        public MainPage()
+        private readonly DatabaseContext _context;
+        public MainPage(DatabaseContext context)
         {
+            _context = context;
             InitializeComponent();
+            listv.ItemsSource = _context.Zvirata.ToList();
         }
 
-        private void OnCounterClicked(object sender, EventArgs e)
-        {
-            count++;
-
-            if (count == 1)
-                CounterBtn.Text = $"Clicked {count} time";
-            else
-                CounterBtn.Text = $"Clicked {count} times";
-
-            SemanticScreenReader.Announce(CounterBtn.Text);
-        }
     }
 
 }
