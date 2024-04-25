@@ -20,8 +20,8 @@ namespace MauiApp2.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Pes>().HasData(
-                new Pes("Caesar", 13),
-                new Pes("Bertík",30)
+                new Pes("Caesar", 13,1),
+                new Pes("Bertík",30,2)
                 );
         }
 
